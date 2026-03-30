@@ -44,7 +44,7 @@ jobs:
       
       - name: Fail job if tests failed
         run: |
-          exit_code="${XCODEBUILD_TEST_EXIT_CODE:-0}"
+          exit_code="${TEST_EXIT_CODE:-0}"
           exit "${exit_code}"
 
   test_macos_15:
@@ -79,5 +79,5 @@ jobs:
       
       - name: Fail job if tests failed
         run: |
-          exit_code="${XCODEBUILD_TEST_EXIT_CODE:-0}"
+          exit_code="${TEST_EXIT_CODE:-0}"
           exit "${exit_code}"

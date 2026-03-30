@@ -56,7 +56,7 @@ struct DownloadTests {
     }
     
     @Test func multiFileDownloadTest() async throws {
-        if ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true" {
+        if ProcessInfo.processInfo.environment["GITHUB_ENV"] != nil {
             print("当前环境为 GitHub Actions，跳过多文件下载测试")
             return
         }
