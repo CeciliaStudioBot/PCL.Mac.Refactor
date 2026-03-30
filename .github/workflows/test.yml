@@ -16,6 +16,7 @@ on:
 
 jobs:
   test_macos_26:
+    name: Test on macOS 26
     if: ${{ github.event.inputs.macos_26 == 'true' }}
     runs-on: macos-26
     steps:
@@ -46,10 +47,11 @@ jobs:
       
       - name: Fail job if tests failed
         run: |
-          exit_code:="${XCODEBUILD_TEST_EXIT_CODE:-0}"
+          exit_code="${XCODEBUILD_TEST_EXIT_CODE:-0}"
           exit "${exit_code}"
 
   test_macos_15:
+    name: Test on macOS 15
     if: ${{ github.event.inputs.macos_15 == 'true' }}
     runs-on: macos-15
     steps:
@@ -80,10 +82,11 @@ jobs:
       
       - name: Fail job if tests failed
         run: |
-          exit_code:="${XCODEBUILD_TEST_EXIT_CODE:-0}"
+          exit_code="${XCODEBUILD_TEST_EXIT_CODE:-0}"
           exit "${exit_code}"
 
   test_macos_12:
+    name: Test on macOS 12
     if: ${{ github.event.inputs.macos_12 == 'true' }}
     runs-on: macos-12
     steps:
@@ -114,5 +117,5 @@ jobs:
       
       - name: Fail job if tests failed
         run: |
-          exit_code:="${XCODEBUILD_TEST_EXIT_CODE:-0}"
+          exit_code="${XCODEBUILD_TEST_EXIT_CODE:-0}"
           exit "${exit_code}"
